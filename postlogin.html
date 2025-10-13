@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Allianz Bank - Area Personale (TEST)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="assets/logo.svg" alt="Allianz Bank" class="logo-img">
+      <nav class="top-nav"><a href="#" id="logout-link" class="link-muted">Esci</a></nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="card post-card">
+      <h1>Benvenuto nell'Area Personale (TEST)</h1>
+      <p id="welcome-text" class="lead">Caricamento...</p>
+
+      <div class="accounts">
+        <div class="acct">
+          <div class="acct-title">Conto Corrente</div>
+          <div class="acct-amount">€ 12.345,67</div>
+        </div>
+        <div class="acct">
+          <div class="acct-title">Investimenti</div>
+          <div class="acct-amount">€ 48.210,00</div>
+        </div>
+      </div>
+
+      <div class="post-actions">
+        <a class="btn" id="go-home" href="index.html">Torna al Login</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">© Allianz Bank F. A. - Test MCP</footer>
+
+  <script>
+    // Mostra l'username passato via sessionStorage
+    const user = sessionStorage.getItem('mcp_user');
+    const welcome = document.getElementById('welcome-text');
+    if (user && user.trim() !== '') {
+      welcome.textContent = `Accesso effettuato come: ${user}`;
+    } else {
+      welcome.innerHTML = 'Accesso effettuato (utente non specificato)';
+    }
+
+    // Logout pulisce sessionStorage
+    document.getElementById('logout-link').addEventListener('click', function(e){
+      e.preventDefault();
+      sessionStorage.removeItem('mcp_user');
+      sessionStorage.removeItem('mcp_pwd');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

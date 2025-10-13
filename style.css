@@ -1,0 +1,76 @@
+/* style.css - closer visual match to the original Allianz look (sanitised for local tests) */
+:root{
+  --blue:#005ea6;
+  --dark:#0b3b57;
+  --muted:#6b7785;
+  --bg:#f3f6f9;
+  --card:#ffffff;
+  --radius:10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:linear-gradient(180deg,#f6f8fa 0%,#f3f6f9 100%);
+  color:#13212b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* header */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid #ebeff2;
+  padding:14px 20px;
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo-img{height:34px}
+.top-nav{display:flex;gap:14px}
+.top-nav .link-muted{color:var(--muted);text-decoration:none;font-size:14px}
+
+/* main */
+.main{display:flex;justify-content:center;padding:36px 16px 60px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:0 8px 24px rgba(15,25,35,0.06);padding:18px;max-width:1100px;width:100%}
+.login-card{display:flex;gap:20px;align-items:stretch;padding:0;overflow:hidden}
+.card-left{flex:1;padding:28px 36px}
+.card-right{width:340px;background:linear-gradient(180deg,#f8fbff,#ffffff);padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid #eef3f6}
+.card h1{margin:0 0 10px;font-size:22px;color:var(--dark)}
+.subtitle{color:var(--muted);margin:0 0 18px}
+.form-row{margin-bottom:12px}
+.form-row label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.form-row input{width:100%;padding:11px 12px;border:1px solid #d7dde3;border-radius:8px;font-size:15px}
+.actions{display:flex;justify-content:flex-end;margin-top:8px}
+.btn{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600}
+.btn[disabled]{opacity:0.55;cursor:not-allowed}
+.note{margin-top:12px;font-size:13px;color:#9aa6b1}
+
+/* right panel */
+.brand-block{text-align:center;margin-bottom:12px}
+.brand-block h2{margin:0;font-size:20px;color:var(--blue)}
+.brand-block p{margin:6px 0 0;color:var(--muted)}
+.hero-ill{width:180px;height:auto;opacity:0.95}
+
+/* post-login */
+.post-card{max-width:760px;padding:28px}
+.lead{color:var(--muted);font-size:15px}
+.accounts{display:flex;gap:12px;margin-top:18px}
+.acct{flex:1;background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:8px;border:1px solid #eef3f6}
+.acct-title{font-size:13px;color:var(--muted)}
+.acct-amount{font-size:18px;margin-top:8px;font-weight:700;color:#0b3b57}
+
+/* footer */
+.site-footer{text-align:center;padding:18px;color:#9aa6b1;font-size:13px}
+
+/* responsive */
+@media(max-width:900px){
+  .login-card{flex-direction:column}
+  .card-right{width:auto;border-left:none;border-top:1px solid #eef3f6}
+}
