@@ -16,22 +16,80 @@
 
   <main class="main">
     <div class="card post-card">
-      <h1>Benvenuto nell'Area Personale (TEST)</h1>
-      <p id="welcome-text" class="lead">Caricamento...</p>
+      <div class="post-layout">
+        <!-- left sidebar -->
+        <aside class="sidebar-left">
+          <div class="user-box">
+            <div class="user-avatar" style="width:48px;height:48px;border-radius:999px;background:#e6f3ff;display:inline-block;vertical-align:middle"></div>
+            <div style="display:inline-block;vertical-align:middle;margin-left:10px">
+              <div class="user-name" id="user-name">Nome Cognome</div>
+              <div style="font-size:13px;color:var(--muted)">Cliente Privato</div>
+            </div>
+          </div>
 
-      <div class="accounts">
-        <div class="acct">
-          <div class="acct-title">Conto Corrente</div>
-          <div class="acct-amount">€ 12.345,67</div>
-        </div>
-        <div class="acct">
-          <div class="acct-title">Investimenti</div>
-          <div class="acct-amount">€ 48.210,00</div>
-        </div>
-      </div>
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px;color:var(--muted)">Sicurezza</h4>
+            <ul style="padding-left:14px;color:var(--muted);margin:0">
+              <li>Modifica email</li>
+              <li>Modifica cellulare</li>
+              <li>Modifica Codici Accesso</li>
+            </ul>
+          </div>
+        </aside>
 
-      <div class="post-actions">
-        <a class="btn" id="go-home" href="index.html">Torna al Login</a>
+        <!-- center content -->
+        <section class="center-col">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h2 style="margin:0">Operazioni veloci</h2>
+            <div style="color:var(--muted)">Personalizza</div>
+          </div>
+
+          <div class="operations">
+            <div class="op">Bonifico SCT</div>
+            <div class="op">Esecuzione Ricarica</div>
+            <div class="op">Pagamenti</div>
+          </div>
+
+          <table class="accounts-table" aria-label="Accounts">
+            <thead>
+              <tr><th>CONTO CORRENTE</th><th>IBAN</th><th>SALDO CONTABILE</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Panelli Veneziani Giuliana, Fermi Ugo</td><td>IT59 J 03589 01600 010570332926</td><td>25.000,63 €</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Banner area similar to screenshot -->
+          <div class="banner" role="region" aria-label="Promozione">
+            <div class="big">
+              <h3>Sicurezza informatica</h3>
+            </div>
+            <div class="cta">
+              <p>Come riconoscere il phishing</p>
+              <a class="btn" href="#">GUARDA IL VIDEO</a>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- right sidebar -->
+        <aside class="right-side">
+          <div class="assist-title">ASSISTENZA</div>
+          <div class="assist-contact">
+            <div>Contact Center:</div>
+            <div class="assist-phone">+39.02.55.50.61.32</div>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">Orario: 9:00 - 18:00</div>
+          </div>
+
+          <div style="margin-top:18px">
+            <div style="font-weight:700;margin-bottom:8px">Documentale</div>
+            <ul style="margin:0;padding-left:16px;color:var(--muted)">
+              <li>My Post Investment</li>
+              <li>My Post Bank</li>
+            </ul>
+          </div>
+        </aside>
+
       </div>
     </div>
   </main>
@@ -39,16 +97,13 @@
   <footer class="site-footer">© Allianz Bank F. A. - Test MCP</footer>
 
   <script>
-    // Mostra l'username passato via sessionStorage
+    // show user info from session
     const user = sessionStorage.getItem('mcp_user');
-    const welcome = document.getElementById('welcome-text');
     if (user && user.trim() !== '') {
-      welcome.textContent = `Accesso effettuato come: ${user}`;
-    } else {
-      welcome.innerHTML = 'Accesso effettuato (utente non specificato)';
+      const el = document.getElementById('user-name');
+      if (el) el.textContent = user;
     }
-
-    // Logout pulisce sessionStorage
+    // logout
     document.getElementById('logout-link').addEventListener('click', function(e){
       e.preventDefault();
       sessionStorage.removeItem('mcp_user');

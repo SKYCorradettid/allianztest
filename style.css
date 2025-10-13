@@ -1,4 +1,4 @@
-/* style.css - closer visual match to the original Allianz look (sanitised for local tests) */
+/* style.css - final visual match adjustments */
 :root{
   --blue:#005ea6;
   --dark:#0b3b57;
@@ -58,19 +58,38 @@ body{
 .brand-block p{margin:6px 0 0;color:var(--muted)}
 .hero-ill{width:180px;height:auto;opacity:0.95}
 
-/* post-login */
-.post-card{max-width:760px;padding:28px}
-.lead{color:var(--muted);font-size:15px}
-.accounts{display:flex;gap:12px;margin-top:18px}
-.acct{flex:1;background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:8px;border:1px solid #eef3f6}
-.acct-title{font-size:13px;color:var(--muted)}
-.acct-amount{font-size:18px;margin-top:8px;font-weight:700;color:#0b3b57}
+/* post-login layout */
+.post-card{max-width:100%;padding:24px}
+.post-layout{display:grid;grid-template-columns:260px 1fr 300px;gap:18px;align-items:start}
+.sidebar-left{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:8px;border:1px solid #eef3f6}
+.sidebar-left .user-box{background:var(--blue);color:#fff;padding:16px;border-radius:8px;text-align:left}
+.sidebar-left .user-name{font-weight:700;margin-top:8px}
+.center-col{background:var(--card);border-radius:8px;padding:18px;min-height:240px;border:1px solid #eef3f6}
+.right-side{background:var(--card);border-radius:8px;padding:18px;border:1px solid #eef3f6;height:max-content}
 
-/* footer */
-.site-footer{text-align:center;padding:18px;color:#9aa6b1;font-size:13px}
+/* operations and accounts */
+.operations{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+.op{flex:1;text-align:center;padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef3f6}
+.accounts-table{width:100%;border-collapse:collapse;margin-top:8px}
+.accounts-table th,.accounts-table td{padding:10px;text-align:left;border-bottom:1px solid #f0f3f6}
+.accounts-table th{color:var(--muted);font-weight:600;font-size:13px}
+
+/* banner */
+.banner{display:flex;gap:12px;margin-top:16px;align-items:stretch}
+.banner .big{flex:2;padding:18px;border-radius:8px;background:linear-gradient(90deg,#ff2d87,#ff6f9a);color:#fff;display:flex;align-items:center;justify-content:center}
+.banner .cta{flex:1;padding:18px;border-radius:8px;background:linear-gradient(180deg,#0b3b57,#005ea6);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.banner .big h3{font-size:28px;margin:0;opacity:0.95}
+.banner .cta p{margin:0 0 12px}
+.banner .cta .btn{background:#fff;color:var(--blue);padding:8px 14px;border-radius:6px}
+
+/* assistance box style */
+.assist-title{background:var(--blue);color:#fff;padding:10px;border-radius:6px;font-weight:700;margin-bottom:12px;text-align:center}
+.assist-contact{background:#f6fbff;border:1px solid #e6f2ff;padding:12px;border-radius:6px;text-align:center;color:var(--dark);font-weight:700}
+.assist-phone{display:inline-block;background:#005ea6;color:#fff;padding:6px 10px;border-radius:6px;margin-top:8px}
 
 /* responsive */
-@media(max-width:900px){
-  .login-card{flex-direction:column}
-  .card-right{width:auto;border-left:none;border-top:1px solid #eef3f6}
+@media(max-width:1100px){
+  .post-layout{grid-template-columns:1fr;gap:12px}
+  .card-right{display:none}
+  .banner{flex-direction:column}
 }

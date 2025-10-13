@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff2d87"/>
+      <stop offset="1" stop-color="#ff6f9a"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b3b57"/>
+      <stop offset="1" stop-color="#005ea6"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="160" x="0" y="10" rx="8" fill="url(#g1)"/>
+  <rect width="200" height="160" x="380" y="10" rx="8" fill="url(#g2)"/>
+  <text x="30" y="80" font-family="Segoe UI, Roboto, Arial" font-size="34" fill="#ffffff" font-weight="700">Sicurezza</text>
+  <text x="30" y="115" font-family="Segoe UI, Roboto, Arial" font-size="14" fill="#ffffff">Come riconoscere il phishing</text>
+  <g transform="translate(420,95)">
+    <rect x="10" y="30" rx="6" width="120" height="36" fill="#ffffff"/>
+    <text x="20" y="55" font-family="Segoe UI, Roboto, Arial" font-size="13" fill="#005ea6" font-weight="700">GUARDA IL VIDEO</text>
+  </g>
+</svg>
